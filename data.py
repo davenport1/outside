@@ -36,10 +36,100 @@ class Character:
         charm = ch
 
 class Modifiers:
-    variable = 0
+    def modifyIntelligence(currentChar, modifier, effect):
+        if effect:
+            Buffs.buffIntelligence(currentChar,modifier)
+        else:
+            Debuffs.debuffIntelligence(currentChar,modifier)
+    
+    def modifyWisdom(currentChar, modifier, effect):
+        if effect:
+            Buffs.buffWisdom(currentChar, modifier)
+        else: 
+            Debuffs.debuffWisdom(currentChar, modifier)
+    
+    def modifyStrength(currentChar, modifier, effect):
+        if effect:
+            Buffs.buffStrength(currentChar,modifier)
+        else: 
+            Debuffs.debuffStrength(currentChar, modifier)
+    
+    def modifyEndurance(currentChar, modifier, effect):
+        if effect:
+            Buffs.buffEndurance(currentChar, modifier)
+        else:
+            Debuffs.debuffEndurance(currentChar, modifier)
+
+    def modifyVitality(currentChar, modifier, effect):
+        if effect:
+            Buffs.buffVitality(currentChar, modifier)
+        else:
+            Debuffs.debuffVitality(currentChar, modifier)
+    def modifyCharm(currentChar, modifier, effect):
+        if effect:
+            Buffs.buffCharm(currentChar, modifier)
+        else:
+            Debuffs.debuffCharm(currentChar, modifier)
 
 class Buffs(Modifiers):
-    variable = 0
+    def buffIntelligence(currentChar,modifier):
+        oldIntel = currentChar.getIntelligence()
+        newIntel = oldIntel + (oldIntel * modifier)
+        currentChar.setIntelligence(newIntel)
 
+    def buffWisdom(currentChar, modifier):
+        oldWis = currentChar.getWisdom()
+        newWis = oldWis + (oldWis * modifier)
+        currentChar.setWisdom(newWis)
+    
+    def buffStrength(currentChar, modifier):
+        oldStr = currentChar.getStrength()
+        newStr = oldStr + (oldStr * modifier)
+        currentChar.setStrength(newStr)
+
+    def buffEndurance(currentChar, modifier):
+        oldEnd = currentChar.getEndurance()
+        newEnd = oldEnd + (oldEnd * modifier)
+        currentChar.setEndurance(newEnd)
+
+    def buffVitality(currentChar, modifier):
+        oldVit = currentChar.getVitality()
+        newVit = oldVit + (oldVit * modifier)
+        currentChar.setVitality(newVit)
+
+    def buffCharm(currentChar, modifier):
+        oldCha = currentChar.getCharm()
+        newCha = oldCha + (oldCha * modifier)
+        currentChar.setCharm(newCha)
+    
 class Debuffs(Modifiers):
-    variable = 0
+    def debuffIntelligence(currentChar, modifier):
+        oldIntel = currentChar.getIntelligence()
+        newIntel = oldIntel - (oldIntel * modifier)
+        currentChar.setIntelligence(newIntel)
+
+    def debuffWisdom(currentChar, modifier):
+        oldWis = currentChar.getWisdom()
+        newWis = oldWis - (oldWis * modifier)
+        currentChar.setWisdom(newWis)
+
+    def debuffStrength(currentChar, modifier):
+        oldStr = currentChar.getStrength()
+        newStr = oldStr - (oldStr * modifier)
+        currentChar.setStrength(newStr)
+
+    def debuffEndurance(currentChar, modifier):
+        oldEnd = currentChar.getEndurance()
+        newEnd = oldEnd - (oldEnd * modifier)
+        currentChar.setEndurance(newEnd)
+
+    def debuffVitality(currentChar, modifier):
+        oldVit = currentChar.getVitality()
+        newVit = oldVit - (oldVit * modifier)
+        currentChar.setVitality(newVit)
+
+    def debuffCharm(currentChar, modifier):
+        oldCha = currentChar.getCharm()
+        newCha = oldCha - (oldCha * modifier)
+        currentChar.setCharm(newCha)
+    
